@@ -15,13 +15,15 @@ jobs:
       id: build
       uses: google/oss-fuzz/infra/cifuzz/actions/build_fuzzers@master
       with:
-        oss-fuzz-project-name: 'lodash'
+        oss-fuzz-project-name: lodash
         language: javascript
+        sanitizer: coverage
     - name: Run Fuzzers
       uses: google/oss-fuzz/infra/cifuzz/actions/run_fuzzers@master
       with:
-        oss-fuzz-project-name: 'lodash'
+        oss-fuzz-project-name: lodash
         language: javascript
+        sanitizer: coverage
         fuzz-seconds: 600
         output-sarif: true
     - name: Upload Crash
