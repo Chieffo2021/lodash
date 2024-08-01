@@ -39,7 +39,7 @@ import toNumber from './toNumber';
  * // => true
  */
 function inRange(number, start, end) {
-    start = toFinite(start);
+    start = toFinite(start) || 0;
     if (end === undefined) {
         end = start;
         start = 0;
